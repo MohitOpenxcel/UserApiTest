@@ -98,4 +98,28 @@ public class UserService {
         userRepository.deleteById(user_id);
     }
 
+    public void getLanguages() {
+        List<Integer> langs = languageRepository.getLangIds();
+
+        List<User> users = userRepository.getAll();
+        Department department;
+
+        int userId=0;
+        for(User user : users){
+            userId = user.getUser_id();
+        }
+
+        for(int i=0;i< langs.size(); i++){
+            for(User user1 : users){
+                department = user1.getDepartment();
+                String name = department.getDepartmentName();
+                user1.setUser_id(userId);
+                userRepository.save(user1);
+                user1.setDepartment(new Department(name,langs.get(i)));
+                userRepository.save(user1);
+                userId++;
+            }
+        }
+    }
+
 }

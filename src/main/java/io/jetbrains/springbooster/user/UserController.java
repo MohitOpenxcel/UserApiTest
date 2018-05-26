@@ -53,4 +53,9 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST , value = "/language")
     public void addLanguage(@RequestBody Language language) {userService.addLanguage(language);}
 
+    @RequestMapping(value = "/users/language/add")
+    public void getLanguages() throws SQLException {
+        userService.getLanguages();
+    }
+
 }
