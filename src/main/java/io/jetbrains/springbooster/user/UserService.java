@@ -113,11 +113,7 @@ public class UserService {
             for(User user1 : users){
                 department = user1.getDepartment();
                 String name = department.getDepartmentName();
-                user1.setUser_id(userId);
-                userRepository.save(user1);
-                user1.setDepartment(new Department(name,langs.get(i)));
-                userRepository.save(user1);
-                userId++;
+                userRepository.saveNewRow(user1);
             }
         }
     }
