@@ -20,14 +20,14 @@ public class SubDepartment {
     private Department department;
 
     @Column(name = "sub_department_name")
-    private String subDepartmentName;
+    private String sub_department_name;
 
     SubDepartment(){
 
     }
 
-    public SubDepartment(Department department, String subDepartmentName) {
+    public SubDepartment(Department department, String sub_department_name) {
         this.department = department;
-        this.subDepartmentName = subDepartmentName;
+        this.sub_department_name = sub_department_name;
     }
 }

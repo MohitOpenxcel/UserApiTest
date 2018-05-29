@@ -15,20 +15,31 @@ public class Department {
     @Column(name = "lang_id")
     private int lang_id;
 
-    @Column(name = "departmentName")
-    private String departmentName;
+    @Column(name = "department_name")
+    private String department_name;
 
     public Department(){}
 
-    public Department(int dept_id,int lang_id, String departmentName) {
+    public Department(int dept_id,int lang_id, String department_name) {
         this.dept_id=dept_id;
         this.lang_id = lang_id;
-        this.departmentName = departmentName;
+        this.department_name = department_name;
     }
 
-    public Department(String departmentName , int lang_id) {
-        this.departmentName = departmentName;
+    public int getLang_id() {
+        return lang_id;
+    }
+
+    public void setLang_id(int lang_id) {
         this.lang_id = lang_id;
+    }
+
+    public String getDepartment_name() {
+        return department_name;
+    }
+
+    public void setDepartment_name(String department_name) {
+        this.department_name = department_name;
     }
 
     public int getDept_id() {
@@ -39,19 +50,8 @@ public class Department {
         this.dept_id = dept_id;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
-    }
-
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
-    }
-
-    public int getLang_id() {
-        return lang_id;
-    }
-
-    public void setLang_id(int lang_id) {
+    public Department(int lang_id, String department_name) {
         this.lang_id = lang_id;
+        this.department_name = department_name;
     }
 }

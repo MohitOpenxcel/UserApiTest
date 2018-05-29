@@ -61,10 +61,10 @@ public class UserService {
         ModelMapper modelMapper = new ModelMapper();
 
         User user = modelMapper.map(preDTO, User.class);
-        user.setDepartment(new Department(preDTO.getDepartmentName(),1));
+        user.setDepartment(new Department(1,preDTO.getDepartment_name()));
         userRepository.save(user);
         department = user.getDepartment();
-        subDepartment = new SubDepartment(department, preDTO.getSubDepartmentName());
+        subDepartment = new SubDepartment(department,preDTO.getDepartment_name());
         subDepartmentRepository.save(subDepartment);
         postDTO = modelMapper.map(user,PostDTO.class);
         return postDTO;
@@ -82,7 +82,13 @@ public class UserService {
         User user1;
         int user_id =id;
         user1 = userRepository.getUser(user_id);
-        user.setDepartment(user1.getDepartment());
+
+        if(user1.getDepartment() != null){
+            user.setDepartment(user1.getDepartment());
+        }else {
+            user.setDepartment(new Department(1,preDTO.getDepartment_name()));
+        }
+
         user.setUser_id(user_id);
         userRepository.save(user);
     }
@@ -90,7 +96,9 @@ public class UserService {
     public void updateDepartment(PreDTO preDTO, int userId, int id) {
         User user1;
         user1 = userRepository.getUser(userId);
-        user1.setDepartment(new Department(preDTO.getDepartmentName(),1));
+        department = user1.getDepartment();
+        department.setDepartment_name(preDTO.getDepartment_name());
+        user1.setDepartment(department);
         userRepository.save(user1);
     }
 
@@ -112,7 +120,7 @@ public class UserService {
         for(int i=0;i< langs.size(); i++){
             for(User user1 : users){
                 department = user1.getDepartment();
-                String name = department.getDepartmentName();
+                String name = department.getDepartment_name();
                 userRepository.saveNewRow(user1);
             }
         }

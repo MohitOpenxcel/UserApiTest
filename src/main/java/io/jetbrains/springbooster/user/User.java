@@ -14,23 +14,23 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int user_id;
 
-    @Column(name = "firstName")
-    private String firstName;
+    @Column(name = "first_name")
+    private String first_name;
 
-    @Column(name = "lastName")
-    private String lastName;
+    @Column(name = "last_name")
+    private String last_name;
 
     @Column(name = "age")
     private int age;
 
     @Column(name = "date_of_birth")
-    private String dateOfBirth ;
+    private String date_of_birth ;
 
     @Column(name = "gender")
     private String gender ;
 
     @Column(name = "registered_date")
-    private String registeredDate;
+    private String registered_date;
 
     @ManyToOne(cascade= CascadeType.ALL )
     @JoinColumn (name = "dept_id", nullable = false)
@@ -41,16 +41,6 @@ public class User {
 
     }
 
-    public User(String firstName, String lastName, int age, String dateOfBirth, String gender, String registeredDate, Department department) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.registeredDate = registeredDate;
-        this.department = department;
-    }
-
     public int getUser_id() {
         return user_id;
     }
@@ -59,20 +49,20 @@ public class User {
         this.user_id = user_id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public int getAge() {
@@ -83,12 +73,12 @@ public class User {
         this.age = age;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getDate_of_birth() {
+        return date_of_birth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDate_of_birth(String date_of_birth) {
+        this.date_of_birth = date_of_birth;
     }
 
     public String getGender() {
@@ -99,12 +89,12 @@ public class User {
         this.gender = gender;
     }
 
-    public String getRegisteredDate() {
-        return registeredDate;
+    public String getRegistered_date() {
+        return registered_date;
     }
 
-    public void setRegisteredDate(String registeredDate) {
-        this.registeredDate = registeredDate;
+    public void setRegistered_date(String registered_date) {
+        this.registered_date = registered_date;
     }
 
     public Department getDepartment() {
@@ -112,6 +102,16 @@ public class User {
     }
 
     public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public User(String first_name, String last_name, int age, String date_of_birth, String gender, String registered_date, Department department) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.age = age;
+        this.date_of_birth = date_of_birth;
+        this.gender = gender;
+        this.registered_date = registered_date;
         this.department = department;
     }
 }
