@@ -30,4 +30,28 @@ public class SubDepartment {
         this.department = department;
         this.sub_department_name = sub_department_name;
     }
+
+    public int getSub_dept_id() {
+        return sub_dept_id;
+    }
+
+    public void setSub_dept_id(int sub_dept_id) {
+        this.sub_dept_id = sub_dept_id;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public String getSub_department_name() {
+        return sub_department_name;
+    }
+
+    public void setSub_department_name(String sub_department_name) {
+        this.sub_department_name = sub_department_name;
+    }
 }
