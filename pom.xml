@@ -67,11 +67,9 @@
     </dependencies>
     <distributionManagement>
         <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>UserApi</id>
-            <name>UserAPi Repository</name>
-            <url>localhost:8080/</url>
-            <layout>default</layout>
+            <id>central</id>
+            <name>83d43b5afeb5-releases</name>
+            <url>${env.MAVEN_REPO_URL}/libs-release-local</url>
         </repository>
     </distributionManagement>
 </project>
