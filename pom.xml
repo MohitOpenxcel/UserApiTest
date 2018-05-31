@@ -68,9 +68,9 @@
     <distributionManagement>
         <repository>
             <uniqueVersion>false</uniqueVersion>
-            <id>corp1</id>
+            <id>UserApi</id>
             <name>UserAPi Repository</name>
-            <url>scp://repo/maven2</url>
+            <url>localhost:8080/</url>
             <layout>default</layout>
         </repository>
     </distributionManagement>

@@ -37,5 +37,3 @@ pipeline {
         }
     }
 }
-
-JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Dhudson.security.csrf.requestfield=Jenkins-Crumb"
