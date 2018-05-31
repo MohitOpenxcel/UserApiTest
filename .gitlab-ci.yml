@@ -1,11 +1,4 @@
-#.gitlab-ci.yml
-stages:
-  - test
-posh_syntax:
-  stage: test
-  tags:
-    - Windows
-  script: .\.gitlab-ci.ps1 'posh_syntax'
-
-  after_script:
-  - HEllo WORLD
+cache:
+  key: "%CI_COMMIT_REF_SLUG%"
+  paths:
+  - binaries/
