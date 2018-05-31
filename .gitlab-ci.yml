@@ -1,1 +1,11 @@
-echo Hello World
+#.gitlab-ci.yml
+stages:
+  - test
+posh_syntax:
+  stage: test
+  tags:
+    - Windows
+  script: .\.gitlab-ci.ps1 'posh_syntax'
+
+  after_script:
+  - HEllo WORLD
